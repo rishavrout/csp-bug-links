@@ -19,6 +19,8 @@
       }
     ]
   },
+  "repository": "https://github.com/rishavrout/csp-bug-links",
+  "publisher": "Rishav Rout",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
