@@ -1,7 +1,7 @@
 {
   "name": "csp-bug-links",
   "displayName": "CSP Bug Links",
-  "description": "",
+  "description": "Integrates Verily CSP Jira tasks with VS Code",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.75.0"
@@ -9,25 +9,23 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["*"],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "csp-bug-links.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./build/src/extension.js",
   "repository": "https://github.com/rishavrout/csp-bug-links",
   "publisher": "Rishav Rout",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "pretest": "npm run compile",
+    "lint": "gts lint",
+    "test": "node ./out/test/runTest.js",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "posttest": "npm run lint"
   },
   "devDependencies": {
     "@types/vscode": "^1.75.0",
@@ -40,6 +38,7 @@
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
     "typescript": "^4.9.5",
-    "@vscode/test-electron": "^2.2.3"
+    "@vscode/test-electron": "^2.2.3",
+    "gts": "^3.1.1"
   }
 }
