@@ -13,8 +13,13 @@
     "*"
   ],
   "main": "./build/src/extension.js",
-  "repository": "https://github.com/rishavrout/csp-bug-links",
-  "publisher": "Rishav Rout",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishavrout/csp-bug-links"
+  },
+  "publisher": "RishavRout",
+  "keywords": ["verily", "csp", "jira"],
+  "icon": "images/logo128square.png",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
