@@ -11,6 +11,8 @@ import {
 const REGEX_PATTERNS = [
     /TODO\(CSP-(?<id>\d+)\)/gi, // TODO(CSP-###)
     /go\/vjira\/CSP-(?<id>\d+)/gi, // go/vjira/CSP-###
+    /TODO\(ONEVERILY-(?<id>\d+)\)/gi, // TODO(ONEVERILY-###)
+    /go\/vjira\/ONEVERILY-(?<id>\d+)/gi, // go/vjira/ONEVERILY-###
 ];
 export function activate(_: ExtensionContext) {
     languages.registerDocumentLinkProvider('*', {
@@ -21,11 +23,11 @@ export function activate(_: ExtensionContext) {
                     const documentLink = new DocumentLink(
                         match.range,
                         Uri.parse(
-                            `https://verily.atlassian.net/browse/CSP-${match.issueId}`,
+                            `https://verily.atlassian.net/browse/ONEVERILY-${match.issueId}`,
                             true
                         )
                     );
-                    documentLink.tooltip = `Open CSP-${match.issueId} in Jira`;
+                    documentLink.tooltip = `Open ONEVERILY-${match.issueId} in Jira`;
                     return documentLink;
                 });
             });
