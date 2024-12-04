@@ -11,3 +11,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.0.2]
 
 - Added support for ONEVERILY links
+
+## [0.2.1]
+
+- Added support for PHP links
